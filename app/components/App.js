@@ -1,25 +1,33 @@
-var React = require('react');
-var TodoBanner = require('./TodoBanner');
-var TodoList = require('./TodoList');
-var TodoForm = require('./TodoForm');
+import React, { Component } from 'react';
+import ValueForm from './InputValForm'
+import TimeForm from './InputTimeForm'
+import Result from './Result'
 
-var TodoApp = React.createClass({
-	getInitialState: function(){
-		return {items: []};
-	},
-	updateItems: function(newItem){
-		var allItems = this.state.items.concat([newItem]);
-		this.setState({items: allItems});
-	},
-	render: function(){
+
+
+export default class App extends Component {
+	constructor(props) {
+    super(props);
+    this.state = {value: '35000', time: '48'};
+
+  //  this.handleDayGreeting = this.handleDayGreeting.bind(this);
+  //  this.handleSubmit = this.handleSubmit.bind(this);
+  }
+	inputVal (value){
+			this.setState({value:value});
+	}
+	inputTime (value){
+			this.setState({time:value});
+	}
+
+	render(){
+
 		return (
 			<div>
-				<TodoBanner number={this.state.items.length}/>
-				<TodoList items={this.state.items}/>
-				<TodoForm onFormSubmit={this.updateItems}/>
+			<ValueForm inputVal={this.inputVal.bind(this)} value = {this.state.value}/>
+			<TimeForm inputTime={this.inputTime.bind(this)} time = {this.state.time}/>
+			<Result value = {this.state.value} time = {this.state.time}/>
 			</div>
 		);
 	}
-});
-
-module.exports = TodoApp;
+}

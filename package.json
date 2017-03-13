@@ -20,5 +20,13 @@
     "html-webpack-plugin": "^2.28.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viblon/task-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viblon/task-manager/issues"
+  },
+  "homepage": "https://github.com/viblon/task-manager#readme"
 }
