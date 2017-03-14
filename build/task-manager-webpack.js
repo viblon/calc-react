@@ -9841,7 +9841,7 @@ class ValueForm extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_nw_react_slider___default.a, {
         value: this.props.value,
         min: 0,
-        max: 500,
+        max: 500000,
         ticks: true,
         markers: [{ value: 3, label: 'Three' }, { value: 8, label: 'Eight' }],
         onChange: this.handleChange.bind(this) })

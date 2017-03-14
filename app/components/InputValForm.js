@@ -29,7 +29,7 @@ export default class ValueForm extends Component {
         <Slider
 	        value={this.props.value}
 	        min={0}
-	        max={500}
+	        max={500000}
 	        ticks
 	        markers={[{value: 3, label: 'Three'}, {value: 8, label: 'Eight'}]}
 	        onChange={this.handleChange.bind(this)}/>
