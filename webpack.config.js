@@ -20,5 +20,6 @@ module.exports = {
     filename: 'task-manager-webpack.js',
     path: __dirname + '/build'
   },
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: [HTMLWebpackPluginConfig],
+  devtool: "source-map"
 };
