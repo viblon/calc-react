@@ -1,34 +1,40 @@
 import React, { Component } from 'react';
+import Slider from 'nw-react-slider'
 
-export default class ValueForm extends React.Component {
+export default class ValueForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: this.props.value||'0'};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {value: this.props.value||35000};
+    //this.handleChange = this.handleChange.bind(this);
+    //this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.props.inputVal(event.target.value);
-    this.setState({value: event.target.value});
 
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+  handleChange(value) {
+   this.setState({value: value});
+   this.props.inputVal(this.state.value);
+ }
 
   render() {
+
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Размер кредита<br/>
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        {/*<input type="submit" value="Submit" />*/}
-      </form>
+      <div>
+        <form>
+          <label>
+            Размер кредита<br/>
+            <input type="text" value={this.state.value} onChange={this.handleChange} />
+          </label>
+          {/*<input type="submit" value="Submit" />*/}
+        </form>
+        <Slider
+	        value={this.props.value}
+	        min={0}
+	        max={500}
+	        ticks
+	        markers={[{value: 3, label: 'Three'}, {value: 8, label: 'Eight'}]}
+	        onChange={this.handleChange.bind(this)}/>
+      </div>
+
     );
   }
 }
