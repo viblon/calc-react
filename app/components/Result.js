@@ -25,10 +25,14 @@ switch (true) {
 }
     {'рублей'}
     return (
-      <div>
+      <form>
         <div>ставка {st*100}%</div>
         <div>ежемесячный платеж: {x} {rur}</div>
-      </div>
+        <button>Оформить заявку</button><br/>
+        
+        <p><input type="checkbox" />Я согласен с условиями кредита</p>
+
+      </form>
     );
   }
 }
